@@ -1,13 +1,50 @@
 from django.contrib import admin
-from django.contrib.auth.admin import UserAdmin
-from django.contrib.auth.models import User
+from .models import CustomUser
+from .forms import CustomUserCreationForm, CustomUserChangeForm
 
 
-# Customizar a exibição de usuários
-class CustomUserAdmin(UserAdmin):
-    list_display = ("username", "email", "first_name", "last_name", "is_staff")
-    search_fields = ("username", "email", "first_name", "last_name")
+class CustomUserAdmin(admin.ModelAdmin):
+    model = CustomUser
+    fields = (
+        "email",
+        "nome",
+        "endereco",
+        "telefone",
+        "cpf",
+        "nascimento",
+        "is_active",
+        "is_admin",
+    )
+    add_fieldsets = (
+        (
+            None,
+            {
+                "classes": ("wide",),
+                "fields": (
+                    "email",
+                    "nome",
+                    "endereco",
+                    "telefone",
+                    "cpf",
+                    "nascimento",
+                    "password1",
+                    "password2",
+                ),
+            },
+        ),
+    )
+    list_display = (
+        "email",
+        "nome",
+        "endereco",
+        "telefone",
+        "cpf",
+        "nascimento",
+        "is_active",
+        "is_admin",
+    )
+    search_fields = ("email", "nome", "cpf")
+    ordering = ("email",)
 
 
-admin.site.unregister(User)
-admin.site.register(User, CustomUserAdmin)
+admin.site.register(CustomUser, CustomUserAdmin)

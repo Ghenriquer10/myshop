@@ -1,10 +1,32 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}   
 {% block title %}Register{% endblock %}
 {% block content %}
 <h1>Register</h1>
 <form method="post">
-    {{ form.as_p }}
     {% csrf_token %}
-    <button type="submit">Register</button>
+    <div class="mb-3">
+        <div class="mb-3">{{ form.nome|as_crispy_field }}</div>
+        <div class="mb-3">{{ form.endereco|as_crispy_field }}</div>
+        <div class="mb-3">{{ form.telefone|as_crispy_field }}</div>
+        <div class="mb-3">{{ form.cpf|as_crispy_field }}</div>
+        <div class="mb-3">{{ form.email|as_crispy_field }}</div>
+        <div class="mb-3">{{ form.nascimento|as_crispy_field }}</div>
+    </div>
+    <br>
+    <div class="bg-darker p-3 mb-3">
+        <h5 class="mb-3 text-center">Password</h5>
+        <div class="d-flex justify-content-around mb-3">
+            <div>
+                <div class="mt-2">{{ form.password1|as_crispy_field }}</div>
+            </div>
+            <div>
+                <div class="mt-2">{{ form.password2|as_crispy_field }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Register</button>
+    </div>
 </form>
 {% endblock %}
