@@ -1,0 +1,66 @@
+.container-register {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
+  background-image: url("../images/marketplace-image.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hero-image {
+  width: 50%;
+  height: 100vh;
+  background-image: url("../images/hero-image-img.png");
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+
+.login-form {
+  width: 50%;
+  height: 100vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  width: 60%;
+  height: 80%;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  opacity: 0.9;
+}
+
+.card-header {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.card-body {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card-body form {
+  width: 90%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */

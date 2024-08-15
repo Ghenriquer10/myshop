@@ -1,32 +1,31 @@
 {% extends "base.html" %}
-{% load crispy_forms_tags %}   
+{% load crispy_forms_tags %}
 {% block title %}Register{% endblock %}
 {% block content %}
-<h1>Register</h1>
-<form method="post">
-    {% csrf_token %}
-    <div class="mb-3">
-        <div class="mb-3">{{ form.nome|as_crispy_field }}</div>
-        <div class="mb-3">{{ form.endereco|as_crispy_field }}</div>
-        <div class="mb-3">{{ form.telefone|as_crispy_field }}</div>
-        <div class="mb-3">{{ form.cpf|as_crispy_field }}</div>
-        <div class="mb-3">{{ form.email|as_crispy_field }}</div>
-        <div class="mb-3">{{ form.nascimento|as_crispy_field }}</div>
-    </div>
-    <br>
-    <div class="bg-darker p-3 mb-3">
-        <h5 class="mb-3 text-center">Password</h5>
-        <div class="d-flex justify-content-around mb-3">
-            <div>
-                <div class="mt-2">{{ form.password1|as_crispy_field }}</div>
-            </div>
-            <div>
-                <div class="mt-2">{{ form.password2|as_crispy_field }}</div>
+    <div class="container-register">
+        <div class="login-form">
+            <div class="card">
+                <div class="card-header">
+                    <h1>Login</h1>
+                </div>
+                <div class="card-body">
+                    <form method="post">
+                        {% csrf_token %}
+                        <div class="mb-1">{{ form.nome|as_crispy_field }}</div>
+                        <div class="mb-1">{{ form.email|as_crispy_field }}</div>
+                        <div class="mb-1">{{ form.nascimento|as_crispy_field }}</div>
+                        <div class="mt-1">{{ form.password1|as_crispy_field }}</div>
+                        <div class="mt-1">{{ form.password2|as_crispy_field }}</div>
+                        <div class="mb-1">
+                            <button type="submit" class="btn btn-primary">Registrar-se</button>
+                        </div>
+                    </form>
+                    <div class="card-footer">
+                        <a href="{% url 'index' %}">Fazer login</a>
+                    </div>
+                </div>
             </div>
         </div>
+        <div class="hero-image">teste</div>
     </div>
-    <div class="mb-3">
-        <button type="submit" class="btn btn-primary">Register</button>
-    </div>
-</form>
 {% endblock %}

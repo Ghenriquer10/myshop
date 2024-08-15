@@ -15,6 +15,7 @@ class CustomUserAdmin(admin.ModelAdmin):
         "nascimento",
         "is_active",
         "is_admin",
+        "password",
     )
     add_fieldsets = (
         (
@@ -43,6 +44,7 @@ class CustomUserAdmin(admin.ModelAdmin):
         "nascimento",
         "is_active",
         "is_admin",
+        "password",
     )
     search_fields = ("email", "nome", "cpf")
     ordering = ("email",)
