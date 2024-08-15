@@ -1,0 +1,18 @@
+repos:
+  - repo: https://github.com/pre-commit/mirrors-isort
+    rev: v5.10.1
+    hooks:
+      - id: isort
+        name: isort
+        entry: isort
+        language: python
+        types: [python]
+
+  - repo: local
+    hooks:
+      - id: djlint
+        name: djlint
+        entry: poetry run djlint --reformat
+        language: system
+        files: \.html$
+        types: [file]

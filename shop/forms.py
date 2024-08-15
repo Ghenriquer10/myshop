@@ -1,6 +1,7 @@
-from django import forms
 from crispy_forms.helper import FormHelper
-from crispy_forms.layout import Layout, Field, Submit
+from crispy_forms.layout import Field, Layout, Submit
+from django import forms
+
 from .models import CustomUser
 
 
